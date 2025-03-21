@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Cats, Users } from 'src/types/main-assets-types';
+import { Cats, Users } from './types/main-assets-types';
 import { POUCH_PRICES } from './constants/constants';
 import * as fs from 'fs';
 import * as path from 'path';
