@@ -2,7 +2,6 @@ import '../../App.css'
 import catImage from '../../assets/cat-image.webp'
 import { useLoaderData, useParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
-import type { Route } from "./types";
 import { userSubscriptionDetailQuery } from './loader';
 
 function Comms(){
