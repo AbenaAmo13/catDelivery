@@ -11,7 +11,7 @@ const queryClient = new QueryClient();
 // Define routes with loaders
 let router = createBrowserRouter([
   { path: "/", element: <Home /> },
-  { path: "/delivery/:userId", element: <Comms />, loader: commsLoader(queryClient) },
+  { path: "/welcome/:userId", element: <Comms />, loader: commsLoader(queryClient) },
 
 ]);
 
