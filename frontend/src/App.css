@@ -3,9 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80vw; /* Adjusted width */
-  max-width: 900px; /* Ensures it doesn't get too large */
-  margin: 5vh auto; /* Center vertically */
+  margin: 5vh 2vw; /* Center vertically */
   background: white;
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
@@ -78,4 +76,55 @@
   padding: 5px 10px;
   border-radius: 5px;
   transform: rotate(10deg);
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .main-card {
+    flex-direction: column; /* Stack image and text sections vertically */
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .cat-image-section {
+    width: 100%; /* Image section takes full width */
+    margin-bottom: 15px; /* Space between image and text */
+  }
+
+  .delivery-message-section {
+    width: 100%; /* Text section takes full width */
+    padding: 15px; /* Reduce padding */
+  }
+
+  .card-title {
+    font-size: 1.2rem; /* Reduce font size */
+  }
+
+  .buttons-container {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons */
+    gap: 10px;
+  }
+
+  .green-button,
+  .green-button-outline {
+    width: 100%; /* Make buttons full width on mobile */
+    padding: 12px 0; /* Make buttons taller */
+  }
+}
+
+/* For very small screens (e.g., mobile devices with less than 480px width) */
+@media screen and (max-width: 480px) {
+  .main-card {
+    margin: 5vh 1vw; /* Reduce margin on smaller screens */
+  }
+
+  .card-title {
+    font-size: 1rem; /* Even smaller font size */
+  }
+
+  .green-button,
+  .green-button-outline {
+    padding: 10px 0; /* Adjust button padding */
+  }
 }
