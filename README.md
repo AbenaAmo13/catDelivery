@@ -12,6 +12,5 @@ In the frontend directory, create a .env.local or a .env file. An example can be
 
 ```
 VITE_NEST_BACKEND_BASE_URL= http://localhost:3000
-VITE_BASE_URL=http://localhost:5173
 ```
 
