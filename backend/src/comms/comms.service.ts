@@ -6,7 +6,7 @@ import * as path from 'path';
 
 @Injectable()
 export class CommsService {
-  private users : Users[]
+  private users: Users[];
 
   constructor() {
     //Read and parse user data from the file as json and assign it to users
@@ -19,8 +19,10 @@ export class CommsService {
     if (!user) {
       throw new NotFoundException('User not found');
     }
-    const cats = user.cats
-    const activeSubscriptionCats = user.cats.filter((cat) => cat.subscriptionActive);
+    const cats = user.cats;
+    const activeSubscriptionCats = user.cats.filter(
+      (cat) => cat.subscriptionActive,
+    );
     //If a cat has no active subscription, inform the user of that
     if (activeSubscriptionCats.length === 0) {
       return {
@@ -32,9 +34,12 @@ export class CommsService {
     }
 
     const catNames = activeSubscriptionCats.map((cat) => cat.name); //get all cats
-    const sortedCatsName = catNames.sort()
-    const formattedCatNames = this.formatCatNames(sortedCatsName)
-    const totalPrice = activeSubscriptionCats.reduce((sum, cat) => sum + POUCH_PRICES[cat.pouchSize], 0);
+    const sortedCatsName = catNames.sort();
+    const formattedCatNames = this.formatCatNames(sortedCatsName);
+    const totalPrice = activeSubscriptionCats.reduce(
+      (sum, cat) => sum + POUCH_PRICES[cat.pouchSize],
+      0,
+    );
     const freeGift = totalPrice > 120;
     return {
       title: `Your next delivery for ${formattedCatNames}`,
@@ -45,12 +50,8 @@ export class CommsService {
   }
 
   private formatCatNames(names: string[]): string {
-    return names.length > 1 
-    ? names.slice(0, -1).join(', ') + ' and ' + names.at(-1)
-    : names[0] || ''
+    return names.length > 1
+      ? names.slice(0, -1).join(', ') + ' and ' + names.at(-1)
+      : names[0] || '';
   }
-  
-  
-
-  
 }
