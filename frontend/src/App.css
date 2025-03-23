@@ -1,42 +1,81 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Centering the card on the page */
+.main-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80vw; /* Adjusted width */
+  max-width: 900px; /* Ensures it doesn't get too large */
+  margin: 5vh auto; /* Center vertically */
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  overflow: hidden; /* Prevents content overflow */
+  padding: 20px;
+  position: relative; /* Needed for the Free Gift banner */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Image section */
+.cat-image-section {
+  width: 40%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-images {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Text Section */
+.delivery-message-section {
+  width: 60%;
+  padding: 20px;
+  text-align: left;
 }
 
-.card {
-  padding: 2em;
+/* Title Styling */
+.card-title {
+  color: green;
+  font-weight: bold;
+  font-size: 1.4rem;
 }
 
-.read-the-docs {
-  color: #888;
+/* Buttons */
+.buttons-container {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.green-button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.green-button-outline {
+  background: transparent;
+  border: 2px solid green;
+  color: green;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Free Gift Banner */
+.free-gift {
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  background: pink;
+  color: black;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transform: rotate(10deg);
 }
