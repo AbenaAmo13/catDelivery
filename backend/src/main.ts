@@ -6,8 +6,8 @@ dotenv.config(); // Load .env file
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   // Enable CORS with environment variables
-  const allowedOrigins = process.env.CORS_ORIGINS?.split(',') || [];
-  let port = process.env.PORT || '';
+  const allowedOrigins = process.env.CORS_ORIGINS?.split(',') || ['http://localhost:5173'];;
+  let port = process.env.PORT || '3000';
   app.enableCors({
     allowedHeaders: 'Content-Type, Accept', // Allowed headers
     origin: allowedOrigins,
